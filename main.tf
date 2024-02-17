@@ -1,4 +1,8 @@
-module "my_vpc" {
-  source = "./modules/aws-vpc"
-  cidr_block = "10.0.0.0/16"
+provider "aws" {
+  region = "us-east-1"
+}
+
+module "my-ec2" {
+  source = "./modules/aws-ec2"
+  instance_type = "t2.micro"
 }
